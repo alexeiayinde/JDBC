@@ -7,11 +7,13 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
 
 	private static Scanner sc = new Scanner(System.in);
+	private static ArrayList listTables = new ArrayList();
 
 	public static void main(String[] args) throws SQLException {
 
@@ -25,6 +27,7 @@ public class App {
 		ResultSet rs = metaData.getTables(conn.getCatalog(), null, null, null);
 		System.out.println("***** LISTE DES TABLES DE LA BDD *****");
 		while (rs.next()) {
+			listTables.add(rs.getString("TABLE_NAME"));
 			System.out.print(rs.getString("TABLE_NAME") + " - ");
 		}
 		System.out.println();
@@ -35,7 +38,7 @@ public class App {
 			System.out.print("Entrez le nom de la table : ");
 			response = sc.nextLine();
 
-			if (!response.equals("exit")) {
+			if (!response.equals("exit") && listTables.contains(response)) {
 				ResultSet result = statement.executeQuery("SELECT * FROM " + response);
 				ResultSetMetaData rsMetaData = result.getMetaData();
 
