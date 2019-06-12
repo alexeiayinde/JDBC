@@ -18,6 +18,10 @@ public class App {
 				Statement st = conn.createStatement();
 				ResultSet rs = st.executeQuery("SELECT * FROM contact")) {
 
+			while (rs.next()) {
+				System.out.println("Une ligne");
+			}
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
