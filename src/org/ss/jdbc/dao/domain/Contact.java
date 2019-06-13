@@ -9,7 +9,6 @@ public class Contact {
 	private Address address;
 
 	public Contact() {
-
 	}
 
 	public Long getId() {

@@ -11,6 +11,10 @@ public class Address {
 	public Address() {
 	}
 
+	public Address(String details) {
+		this.details = details;
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -33,6 +37,10 @@ public class Address {
 
 	public void setContacts(Set<Contact> contacts) {
 		this.contacts = contacts;
+	}
+
+	public void addContact(Contact c) {
+		contacts.add(c);
 	}
 
 	@Override
