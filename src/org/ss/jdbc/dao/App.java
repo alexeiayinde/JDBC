@@ -1,4 +1,4 @@
-package org.ss.jdbc.optim;
+package org.ss.jdbc.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
