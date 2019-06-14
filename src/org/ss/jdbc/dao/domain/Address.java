@@ -1,5 +1,6 @@
 package org.ss.jdbc.dao.domain;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class Address {
@@ -9,9 +10,11 @@ public class Address {
 	private Set<Contact> contacts;
 
 	public Address() {
+		this.contacts = new HashSet<Contact>();
 	}
 
 	public Address(String details) {
+		this.contacts = new HashSet<Contact>();
 		this.details = details;
 	}
 
